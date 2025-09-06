@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Depends
 from sqlmodel import Session, select
-from database import get_session
-from models import User
+from ...database import get_session
+from ...models import User
 
 router = APIRouter(prefix="/login", tags=["login"])
 

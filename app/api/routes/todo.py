@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, status, Header
 from sqlmodel import Session, select, func
-from database import get_session
-from models import Todo, TodoCreate, TodoUpdate, TodoPublic, TodosResponse
+from ...database import get_session
+from ...models import Todo, TodoCreate, TodoUpdate, TodoPublic, TodosResponse
 import math
 
 router = APIRouter(prefix="/todo", tags=["todo"])

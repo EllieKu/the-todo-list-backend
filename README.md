@@ -11,7 +11,6 @@ pip install -r requirements.txt
 ```
 
 ## Run dev
-cd to /app
 ```shell
-python -m fastapi dev main.py
+python -m fastapi dev app/main.py
 ```
