@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from .api.main import api_router
@@ -14,6 +15,14 @@ app = FastAPI(
     description="A simple Todo List API built with FastAPI and SQLModel",
     version="1.0.0",
     lifespan=lifespan
+)
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all origins
+    allow_credentials=True,
+    allow_headers=["user-id", "content-type"],
 )
 
 app.include_router(api_router)
